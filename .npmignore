@@ -1,0 +1,39 @@
+# Source files
+src/
+__tests__/
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# Configuration files
+.git/
+.gitignore
+.npmignore
+.eslintrc*
+.prettierrc*
+.editorconfig
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+vitest.config.ts
+
+# Development files
+coverage/
+.nyc_output/
+.vscode/
+.idea/
+*.log
+*.tgz
+
+# Documentation
+CHANGELOG.md
+*.md
+!README.md
+
+# Misc
+.DS_Store
+.env*
+
+# npm pack
+*.tgz
