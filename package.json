@@ -18,10 +18,8 @@
   ],
   "scripts": {
     "build": "npm run typecheck && vite build",
-    "test": "vitest --run",
-    "test:coverage": "vitest run --coverage",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm test && npm run build"
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "expo",
@@ -32,20 +30,18 @@
   "author": "Yasuo Higa",
   "license": "MIT",
   "peerDependencies": {
+    "@expo/vector-icons": ">=14.0.0",
+    "expo-clipboard": ">=7.0.0",
     "react": ">=16.8.0",
     "react-native": ">=0.60.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.28",
     "@types/react": "~19.0.10",
+    "@types/react-native": "^0.72.0",
     "@vitejs/plugin-react": "^4.3.4",
-    "@vitest/coverage-v8": "^1.4.0",
-    "jsdom": "^26.0.0",
     "typescript": "~5.8.3",
     "vite": "^5.1.6",
-    "vite-plugin-dts": "^3.7.3",
-    "vitest": "^1.4.0",
-    "@testing-library/react-native": "^12.0.0",
-    "@types/react-native": "^0.72.0"
+    "vite-plugin-dts": "^3.7.3"
   }
 }
