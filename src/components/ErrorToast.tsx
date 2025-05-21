@@ -3,17 +3,17 @@ import { View, Text, Pressable, StyleSheet, ScrollView } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import * as Clipboard from 'expo-clipboard';
 
-interface ErrorDisplayProps {
+interface ErrorToastProps {
   message: string;
   onClose: () => void;
   visible: boolean;
 }
 
-export const ErrorDisplay = ({
+export const ErrorToast = ({
   message,
   onClose,
   visible,
-}: ErrorDisplayProps) => {
+}: ErrorToastProps) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {

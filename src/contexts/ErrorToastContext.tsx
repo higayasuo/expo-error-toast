@@ -1,21 +1,21 @@
 import React, { createContext, useContext, useState, useCallback } from 'react';
-import { ErrorDisplay } from '../components/ErrorDisplay';
+import { ErrorToast } from '../components/ErrorToast';
 
-interface ErrorContextType {
+interface ErrorToastContextType {
   showError: (error: unknown) => void;
 }
 
-const ErrorContext = createContext<ErrorContextType | undefined>(undefined);
+const ErrorToastContext = createContext<ErrorToastContextType | undefined>(undefined);
 
-export function useError() {
-  const context = useContext(ErrorContext);
+export function useErrorToast() {
+  const context = useContext(ErrorToastContext);
   if (!context) {
-    throw new Error('useError must be used within an ErrorProvider');
+    throw new Error('useErrorToast must be used within an ErrorToastProvider');
   }
   return context;
 }
 
-interface ErrorProviderProps {
+interface ErrorToastProviderProps {
   children: React.ReactNode;
 }
 
@@ -29,7 +29,7 @@ const formatErrorMessage = (error: unknown): string => {
   return JSON.stringify(error);
 };
 
-export function ErrorProvider({ children }: ErrorProviderProps) {
+export function ErrorToastProvider({ children }: ErrorToastProviderProps) {
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [visible, setVisible] = useState(false);
 
@@ -45,13 +45,13 @@ export function ErrorProvider({ children }: ErrorProviderProps) {
   }, []);
 
   return (
-    <ErrorContext.Provider value={{ showError }}>
+    <ErrorToastContext.Provider value={{ showError }}>
       {children}
-      <ErrorDisplay
+      <ErrorToast
         message={errorMessage}
         visible={visible}
         onClose={clearError}
       />
-    </ErrorContext.Provider>
+    </ErrorToastContext.Provider>
   );
 }

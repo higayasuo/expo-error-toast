@@ -1,1 +1,1 @@
-export * from './ErrorDisplay';
+export * from './ErrorToast';

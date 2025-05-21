@@ -1,7 +1,7 @@
 {
-  "name": "expo-error-universal",
+  "name": "expo-error-toast",
   "version": "0.1.0",
-  "description": "Universal error handling for Expo applications",
+  "description": "Toast to show error messages for Expo applications",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -16,6 +16,14 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/higayasuo/expo-error-toast.git"
+  },
+  "homepage": "https://github.com/higayasuo/expo-error-toast#readme",
+  "bugs": {
+    "url": "https://github.com/higayasuo/expo-error-toast/issues"
+  },
   "scripts": {
     "build": "npm run typecheck && vite build",
     "typecheck": "tsc --noEmit",
@@ -24,7 +32,7 @@
   "keywords": [
     "expo",
     "react-native",
-    "error-handling",
+    "error-toast",
     "typescript"
   ],
   "author": "Yasuo Higa",
